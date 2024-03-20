@@ -5,8 +5,10 @@ from .views import CourseViewSet, LessonListCreate, LessonRetrieveUpdateDestroy
 router = DefaultRouter()
 router.register(r'courses', CourseViewSet)
 
+
 urlpatterns = [
-       path('', include(router.urls)),
-       path('lessons/', LessonListCreate.as_view()),
-       path('lessons/<int:pk>/', LessonRetrieveUpdateDestroy.as_view()),
+        path('', include(router.urls)),
+        path('lessons/', LessonListCreate.as_view()),
+        path('lessons/<int:pk>/', LessonRetrieveUpdateDestroy.as_view()),
+        path('', include(router.urls)),
    ]

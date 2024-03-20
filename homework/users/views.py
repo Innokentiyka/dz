@@ -1,5 +1,7 @@
 from rest_framework import  filters
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.permissions import IsAuthenticated
+
 from .models import Payment
 from .serializers import PaymentSerializer
 from .permissions import IsOwnerOrReadOnly
@@ -21,6 +23,7 @@ class PaymentViewSet(viewsets.ModelViewSet):
 
 
 class CourseViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
