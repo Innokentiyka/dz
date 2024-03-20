@@ -108,6 +108,16 @@ REST_FRAMEWORK = {
            'rest_framework.permissions.IsAuthenticated',
        ),
     }
+DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': 'mydatabase2',
+           'USER': 'Lequrs',
+           'PASSWORD': 'kerik00989',
+           'HOST': 'localhost',
+           'PORT': '5432',
+       }
+   }
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
